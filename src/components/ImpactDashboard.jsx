@@ -94,28 +94,33 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
         </div>
 
         {/* Interactive Personal Impact Calculator */}
-        <div className="bg-slate-900 dark:bg-slate-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/70 text-white rounded-3xl p-6 sm:p-9 shadow-2xl border border-slate-800/80 relative overflow-hidden">
+          {/* Ambient decorative blur circle */}
+          <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Calculator Controls */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <div className="inline-flex items-center gap-1 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">
-                  <Sparkles className="w-3.5 h-3.5" /> Interactive Calculator
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+                  <Sparkles className="w-3.5 h-3.5" /> Interactive Circularity Estimator
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                   Estimate Your Semester Savings & Environmental Offset
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                  Adjust your expected academic & dorm needs to calculate how much you save by circulating through Trove:
+                <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                  Adjust your expected academic & dorm needs to calculate how much money and carbon you divert by circulating through Trove:
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-5 bg-slate-950/40 p-4 sm:p-5 rounded-2xl border border-white/5">
                 {/* Textbooks slider */}
                 <div>
-                  <div className="flex justify-between text-xs font-semibold mb-1.5">
-                    <span className="text-slate-200">📚 Textbooks Circulated / Bought Used:</span>
-                    <span className="text-emerald-400 font-bold text-sm">{textbooksCount} books</span>
+                  <div className="flex justify-between text-xs font-semibold mb-2">
+                    <span className="text-slate-200 flex items-center gap-1.5">📚 Textbooks Circulated / Bought Used:</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs border border-emerald-500/30">
+                      {textbooksCount} {textbooksCount === 1 ? 'course book' : 'course books'}
+                    </span>
                   </div>
                   <input
                     type="range"
@@ -124,15 +129,24 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                     step="1"
                     value={textbooksCount}
                     onChange={(e) => setTextbooksCount(Number(e.target.value))}
-                    className="w-full accent-emerald-500 h-2 bg-slate-700 rounded-lg cursor-pointer"
+                    className="w-full h-2.5 bg-slate-700/80 rounded-lg cursor-pointer"
                   />
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>0</span>
+                    <span>2</span>
+                    <span>4</span>
+                    <span>6</span>
+                    <span>8 books</span>
+                  </div>
                 </div>
 
                 {/* Tech / Lab Rent slider */}
                 <div>
-                  <div className="flex justify-between text-xs font-semibold mb-1.5">
-                    <span className="text-slate-200">🔬 Lab Kits / Calculators / Tech Rented:</span>
-                    <span className="text-sky-400 font-bold text-sm">{techRentCount} items</span>
+                  <div className="flex justify-between text-xs font-semibold mb-2">
+                    <span className="text-slate-200 flex items-center gap-1.5">🔬 Lab Kits / Calculators / Tech Rented:</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-extrabold text-xs border border-sky-500/30">
+                      {techRentCount} {techRentCount === 1 ? 'item' : 'items'}
+                    </span>
                   </div>
                   <input
                     type="range"
@@ -141,15 +155,24 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                     step="1"
                     value={techRentCount}
                     onChange={(e) => setTechRentCount(Number(e.target.value))}
-                    className="w-full accent-sky-400 h-2 bg-slate-700 rounded-lg cursor-pointer"
+                    className="w-full h-2.5 bg-slate-700/80 rounded-lg cursor-pointer"
                   />
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>5 items</span>
+                  </div>
                 </div>
 
                 {/* Dorm essentials slider */}
                 <div>
-                  <div className="flex justify-between text-xs font-semibold mb-1.5">
-                    <span className="text-slate-200">🛋️ Dorm Gear / Move-in Supplies Circulated:</span>
-                    <span className="text-amber-400 font-bold text-sm">{dormPassCount} items</span>
+                  <div className="flex justify-between text-xs font-semibold mb-2">
+                    <span className="text-slate-200 flex items-center gap-1.5">🛋️ Dorm Gear / Move-in Supplies Circulated:</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-xs border border-amber-500/30">
+                      {dormPassCount} {dormPassCount === 1 ? 'item' : 'items'}
+                    </span>
                   </div>
                   <input
                     type="range"
@@ -158,45 +181,51 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                     step="1"
                     value={dormPassCount}
                     onChange={(e) => setDormPassCount(Number(e.target.value))}
-                    className="w-full accent-amber-400 h-2 bg-slate-700 rounded-lg cursor-pointer"
+                    className="w-full h-2.5 bg-slate-700/80 rounded-lg cursor-pointer"
                   />
+                  <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                    <span>0</span>
+                    <span>2</span>
+                    <span>4</span>
+                    <span>6 items</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Calculated Output Cards */}
-            <div className="lg:col-span-5 bg-slate-800/80 dark:bg-slate-900/90 rounded-xl p-5 border border-slate-700 space-y-4">
-              <div className="text-center pb-2 border-b border-slate-700">
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+            <div className="lg:col-span-5 bg-slate-800/80 dark:bg-slate-900/90 rounded-2xl p-6 border border-emerald-500/30 shadow-xl space-y-4 backdrop-blur-md">
+              <div className="text-center pb-3 border-b border-slate-700/80">
+                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
                   Your Semester Impact With Trove
                 </span>
-                <div className="text-3xl sm:text-4xl font-black text-emerald-400 tracking-tight mt-1">
+                <div className="text-4xl sm:text-5xl font-black text-white tracking-tight mt-1.5 drop-shadow-sm">
                   ₹{estimatedSavings.toLocaleString()}
                 </div>
-                <div className="text-xs text-slate-300 font-medium">Estimated Direct Student Savings</div>
+                <div className="text-xs text-slate-300 font-medium mt-1">Estimated Direct Student Savings</div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-left">
-                <div className="bg-slate-900/70 dark:bg-slate-950 p-3 rounded-lg border border-slate-700/60">
-                  <div className="flex items-center gap-1.5 text-teal-400 text-xs font-semibold">
-                    <Leaf className="w-3.5 h-3.5" /> CO₂ Offset
+                <div className="bg-slate-900/80 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-700/60 hover:border-teal-500/40 transition-colors">
+                  <div className="flex items-center gap-1.5 text-teal-400 text-xs font-bold">
+                    <Leaf className="w-4 h-4" /> CO₂ Offset
                   </div>
-                  <div className="text-lg font-bold text-white mt-0.5">{estimatedCO2.toFixed(1)} kg</div>
-                  <div className="text-[10px] text-slate-400">Equivalent to planting {treesSaved} trees</div>
+                  <div className="text-xl font-black text-white mt-1">{estimatedCO2.toFixed(1)} kg</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">Equivalent to planting {treesSaved} trees</div>
                 </div>
 
-                <div className="bg-slate-900/70 dark:bg-slate-950 p-3 rounded-lg border border-slate-700/60">
-                  <div className="flex items-center gap-1.5 text-amber-400 text-xs font-semibold">
-                    <Trash2 className="w-3.5 h-3.5" /> Landfill Diverted
+                <div className="bg-slate-900/80 dark:bg-slate-950 p-3.5 rounded-xl border border-slate-700/60 hover:border-amber-500/40 transition-colors">
+                  <div className="flex items-center gap-1.5 text-amber-400 text-xs font-bold">
+                    <Trash2 className="w-4 h-4" /> Waste Diverted
                   </div>
-                  <div className="text-lg font-bold text-white mt-0.5">{estimatedWasteKg.toFixed(1)} kg</div>
-                  <div className="text-[10px] text-slate-400">Kept out of campus dumpsters</div>
+                  <div className="text-xl font-black text-white mt-1">{estimatedWasteKg.toFixed(1)} kg</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">Kept out of campus dumpsters</div>
                 </div>
               </div>
 
-              <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2 text-xs text-emerald-300">
-                <Award className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>
+              <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5 text-xs text-emerald-300">
+                <Award className="w-5 h-5 text-emerald-400 shrink-0" />
+                <span className="leading-snug">
                   You unlock the <strong>"Campus Eco Sentinel"</strong> verified student badge this term!
                 </span>
               </div>

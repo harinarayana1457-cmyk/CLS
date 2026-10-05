@@ -5,6 +5,7 @@ import {
   ShieldCheck, 
   Leaf, 
   DollarSign, 
+  IndianRupee,
   RefreshCw, 
   BookOpen, 
   ShoppingBag, 
@@ -133,43 +134,43 @@ export function HeroBanner({
 
         {/* Campus Trust & Economy Stats Banner */}
         <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
-          <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 rounded-xl p-3.5 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-              <DollarSign className="w-5 h-5" />
+          <div className="bg-slate-800/60 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/60 hover:border-emerald-500/40 rounded-2xl p-4 flex items-center gap-3.5 transition-all duration-300 hover:-translate-y-1 shadow-md shadow-black/20">
+            <div className="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              {currentCampus.currency === '₹' ? <IndianRupee className="w-5 h-5 stroke-[2.5]" /> : <DollarSign className="w-5 h-5 stroke-[2.5]" />}
             </div>
             <div>
-              <div className="text-lg sm:text-xl font-bold text-white tracking-tight">{currentCampus.moneySaved}</div>
-              <div className="text-[11px] text-slate-400 font-medium">Student Wallets Saved</div>
+              <div className="text-xl sm:text-2xl font-black text-white tracking-tight">{currentCampus.moneySaved}</div>
+              <div className="text-[11px] text-slate-300 font-medium">Student Wallets Saved</div>
             </div>
           </div>
 
-          <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 rounded-xl p-3.5 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
-              <Leaf className="w-5 h-5" />
+          <div className="bg-slate-800/60 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/60 hover:border-teal-500/40 rounded-2xl p-4 flex items-center gap-3.5 transition-all duration-300 hover:-translate-y-1 shadow-md shadow-black/20">
+            <div className="w-11 h-11 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30 flex items-center justify-center shrink-0">
+              <Leaf className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
-              <div className="text-lg sm:text-xl font-bold text-white tracking-tight">{currentCampus.co2SavedKg.toLocaleString()} kg</div>
-              <div className="text-[11px] text-slate-400 font-medium">CO₂ Kept From Atmo</div>
+              <div className="text-xl sm:text-2xl font-black text-white tracking-tight">{currentCampus.co2SavedKg.toLocaleString()} kg</div>
+              <div className="text-[11px] text-slate-300 font-medium">CO₂ Kept From Atmo</div>
             </div>
           </div>
 
-          <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 rounded-xl p-3.5 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
-              <RefreshCw className="w-5 h-5" />
+          <div className="bg-slate-800/60 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/60 hover:border-sky-500/40 rounded-2xl p-4 flex items-center gap-3.5 transition-all duration-300 hover:-translate-y-1 shadow-md shadow-black/20">
+            <div className="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 border border-sky-500/30 flex items-center justify-center shrink-0">
+              <RefreshCw className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
-              <div className="text-lg sm:text-xl font-bold text-white tracking-tight">{currentCampus.itemsCirculated.toLocaleString()}+</div>
-              <div className="text-[11px] text-slate-400 font-medium">Assets Re-Circulated</div>
+              <div className="text-xl sm:text-2xl font-black text-white tracking-tight">{currentCampus.itemsCirculated.toLocaleString()}+</div>
+              <div className="text-[11px] text-slate-300 font-medium">Assets Re-Circulated</div>
             </div>
           </div>
 
-          <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/60 rounded-xl p-3.5 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+          <div className="bg-slate-800/60 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/60 hover:border-amber-500/40 rounded-2xl p-4 flex items-center gap-3.5 transition-all duration-300 hover:-translate-y-1 shadow-md shadow-black/20">
+            <div className="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
-              <div className="text-lg sm:text-xl font-bold text-white tracking-tight">{currentCampus.activeStudents.toLocaleString()}</div>
-              <div className="text-[11px] text-slate-400 font-medium">Verified .EDU Peers</div>
+              <div className="text-xl sm:text-2xl font-black text-white tracking-tight">{currentCampus.activeStudents.toLocaleString()}</div>
+              <div className="text-[11px] text-slate-300 font-medium">Verified @{currentCampus.domain} Peers</div>
             </div>
           </div>
         </div>

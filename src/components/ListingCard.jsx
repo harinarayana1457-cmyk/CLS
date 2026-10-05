@@ -22,31 +22,31 @@ export function ListingCard({
     switch (listing.mode) {
       case 'buy':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-600 text-white shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xs">
             Buy / Sell
           </span>
         );
       case 'rent':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-sky-600 text-white shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-xs">
             Course Rental
           </span>
         );
       case 'swap':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-600 text-white shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-xs">
             Barter Swap
           </span>
         );
       case 'free':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500 text-slate-950 shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-xs">
             Free Share
           </span>
         );
       case 'wanted':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-600 text-white shadow-xs">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-xs">
             Wanted / Request
           </span>
         );
@@ -76,7 +76,7 @@ export function ListingCard({
   return (
     <div 
       onClick={() => onSelectListing(listing)}
-      className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-500 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-200 flex flex-col cursor-pointer relative"
+      className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-emerald-500/5 dark:hover:shadow-emerald-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer relative"
     >
       {/* Card Header & Image */}
       <div className="relative aspect-4/3 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
@@ -84,7 +84,7 @@ export function ListingCard({
           src={listing.image}
           alt={listing.title}
           loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
         />
 
         {/* Floating Badges */}
@@ -103,10 +103,10 @@ export function ListingCard({
             e.stopPropagation();
             onToggleSave(listing.id);
           }}
-          className={`absolute top-2.5 right-2.5 p-2 rounded-full backdrop-blur-md transition-all z-10 ${
+          className={`absolute top-2.5 right-2.5 p-2 rounded-full backdrop-blur-md transition-all duration-200 z-10 active:scale-90 ${
             isSaved
               ? 'bg-rose-500 text-white shadow-md'
-              : 'bg-white/80 dark:bg-slate-900/80 hover:bg-white dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400'
+              : 'bg-white/85 dark:bg-slate-900/85 hover:bg-white dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 shadow-xs'
           }`}
           title={isSaved ? 'Remove from Saved' : 'Save Item'}
         >
@@ -115,7 +115,7 @@ export function ListingCard({
 
         {/* Eco-Score Overlay Badge */}
         {listing.sustainability && (
-          <div className="absolute bottom-2 left-2.5 px-2 py-0.5 rounded-md bg-slate-950/75 text-emerald-300 text-[10px] font-semibold backdrop-blur-xs flex items-center gap-1">
+          <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-slate-950/80 text-emerald-300 text-[10px] font-bold backdrop-blur-md border border-white/10 flex items-center gap-1.5 shadow-sm">
             <Leaf className="w-3 h-3 text-emerald-400" />
             <span>Prevents {listing.sustainability.co2SavedKg} kg CO₂</span>
           </div>
@@ -211,7 +211,7 @@ export function ListingCard({
               e.stopPropagation();
               onSelectListing(listing);
             }}
-            className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-600 dark:group-hover:bg-emerald-600 group-hover:text-white text-slate-700 dark:text-slate-200 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+            className="px-3.5 py-1.5 bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-600 dark:group-hover:bg-emerald-600 text-slate-800 dark:text-slate-200 group-hover:text-white dark:group-hover:text-white rounded-xl text-xs font-bold transition-all duration-200 shadow-xs cursor-pointer active:scale-95"
           >
             {listing.mode === 'buy' ? 'Buy Now' : listing.mode === 'rent' ? 'Rent' : listing.mode === 'swap' ? 'Swap' : listing.mode === 'free' ? 'Claim' : 'Fulfill'}
           </button>

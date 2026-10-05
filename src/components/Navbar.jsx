@@ -13,7 +13,8 @@ import {
   UserCheck,
   CheckCircle2,
   Sun,
-  Moon
+  Moon,
+  X
 } from 'lucide-react';
 import { CAMPUSES } from '../data/campuses';
 
@@ -44,7 +45,7 @@ export function Navbar({
               <ShieldCheck className="w-3 h-3 mr-1" /> Verified Campus Network
             </span>
             <span className="hidden sm:inline text-slate-400">
-              Locked to verified <strong className="text-white">.{currentCampus.domain}</strong> university community members
+              Locked to verified <strong className="text-white">@{currentCampus.domain}</strong> university community members
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -152,17 +153,26 @@ export function Navbar({
         </div>
 
         {/* Global Search Bar */}
-        <div className="hidden md:flex flex-1 max-w-md relative">
+        <div className="hidden md:flex flex-1 max-w-md relative items-center">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 dark:text-slate-500">
             <Search className="w-4 h-4" />
           </div>
           <input
             type="text"
             placeholder="Search courses (e.g. CSE2001, MAT1011), Casio calculators, cycles, lab gear..."
-            value={searchQuery}
+            value={searchQuery === '__saved__' ? '' : searchQuery === '__free__' ? 'Free' : searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-100/80 dark:hover:bg-slate-700/80 focus:bg-white dark:focus:bg-slate-800 text-xs rounded-full border border-slate-200 dark:border-slate-700 focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
+            className="w-full pl-9 pr-9 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-100/80 dark:hover:bg-slate-700/80 focus:bg-white dark:focus:bg-slate-800 text-xs rounded-full border border-slate-200 dark:border-slate-700 focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
           />
+          {searchQuery && (
+            <button
+              onClick={() => onSearchChange('')}
+              className="absolute right-2.5 p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-full hover:bg-slate-200/60 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+              title="Clear search"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
 
         {/* Actions & Profile */}
