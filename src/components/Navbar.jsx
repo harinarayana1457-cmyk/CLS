@@ -69,11 +69,11 @@ export function Navbar({
         {/* Brand Logo & Campus Switcher */}
         <div className="flex items-center gap-4">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white dark:bg-slate-800 flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform border border-slate-100 dark:border-slate-700 shrink-0">
+            <div className="w-10 h-10 flex items-center justify-center shrink-0">
               <img 
-                src="/trove-logo.jpg" 
+                src="/trove-logo.png" 
                 alt="Trove Logo" 
-                className="w-full h-full object-cover scale-110"
+                className="w-10 h-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform"
               />
             </div>
             <div>

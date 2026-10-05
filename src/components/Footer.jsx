@@ -17,8 +17,8 @@ export function Footer({ currentCampus, onOpenSafeZonesModal, onOpenRequestModal
           {/* Brand & Mission */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg overflow-hidden bg-white flex items-center justify-center shrink-0">
-                <img src="/trove-logo.jpg" alt="Trove" className="w-full h-full object-cover scale-110" />
+              <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                <img src="/trove-logo.png" alt="Trove" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">Trove</span>
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">

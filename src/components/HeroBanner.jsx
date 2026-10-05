@@ -42,8 +42,8 @@ export function HeroBanner({
       <div className="relative max-w-5xl mx-auto text-center space-y-6">
         {/* Trove Official Brand Emblem & Campus Community Pill */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <div className="w-14 h-14 rounded-2xl bg-white p-1 shadow-xl shadow-emerald-500/20 border-2 border-emerald-400/50 hover:scale-105 transition-transform flex items-center justify-center">
-            <img src="/trove-logo.jpg" alt="Trove Circular Economy Emblem" className="w-full h-full object-cover rounded-xl" />
+          <div className="w-14 h-14 flex items-center justify-center hover:scale-105 transition-transform shrink-0">
+            <img src="/trove-logo.png" alt="Trove Circular Economy Emblem" className="w-14 h-14 object-contain drop-shadow-md" />
           </div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-900/60 border border-emerald-500/40 text-emerald-300 text-xs font-semibold backdrop-blur-md shadow-inner">
             <span className="text-base">{currentCampus.logo}</span>
