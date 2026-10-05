@@ -124,13 +124,13 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left: Chat list */}
-        <div className="w-full md:w-72 bg-slate-50 dark:bg-slate-850 border-r border-slate-200 dark:border-slate-800 flex flex-col">
-          <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div className="w-full md:w-72 bg-slate-50 dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0">
+          <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-100/60 dark:bg-slate-900">
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white text-sm">Campus In-App Deals</h3>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">Verified @{currentCampus.domain} Peers</p>
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Campus In-App Deals</h3>
+              <p className="text-[11px] text-slate-600 dark:text-slate-400">Verified @{currentCampus.domain} Peers</p>
             </div>
-            <button onClick={onClose} className="md:hidden text-slate-400 cursor-pointer">
+            <button onClick={onClose} className="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -144,17 +144,19 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                   key={c.id}
                   onClick={() => setActiveConvId(c.id)}
                   className={`w-full p-3.5 text-left flex items-start gap-3 transition-colors cursor-pointer ${
-                    isSelected ? 'bg-white dark:bg-slate-800 shadow-xs border-l-4 border-emerald-600' : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/50'
+                    isSelected 
+                      ? 'bg-white dark:bg-slate-800 shadow-xs border-l-4 border-emerald-500' 
+                      : 'hover:bg-slate-100/80 dark:hover:bg-slate-800/60 bg-transparent'
                   }`}
                 >
                   <img src={c.peerAvatar} alt={c.peerName} className="w-10 h-10 rounded-full object-cover shrink-0" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-900 dark:text-white truncate">{c.peerName}</span>
-                      <span className="text-[10px] text-slate-400 dark:text-slate-500">{lastMsg?.time}</span>
+                      <span className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">{c.peerName}</span>
+                      <span className="text-[10px] text-slate-500 dark:text-slate-400">{lastMsg?.time}</span>
                     </div>
                     <div className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 truncate">{c.itemTitle}</div>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">{lastMsg?.text}</p>
+                    <p className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-0.5">{lastMsg?.text}</p>
                   </div>
                 </button>
               );
@@ -165,17 +167,17 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
         {/* Right: Active Chat View */}
         <div className="flex-1 flex flex-col justify-between bg-white dark:bg-slate-900">
           {/* Chat Header */}
-          <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-850/80">
+          <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/90">
             <div className="flex items-center gap-3">
               <img src={activeConv.peerAvatar} alt={activeConv.peerName} className="w-9 h-9 rounded-full object-cover" />
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-slate-900 dark:text-white text-sm">{activeConv.peerName}</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100 text-sm">{activeConv.peerName}</span>
                   <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 font-bold border dark:border-emerald-800 flex items-center">
                     <ShieldCheck className="w-3 h-3 mr-0.5" /> Verified
                   </span>
                 </div>
-                <div className="text-[11px] text-slate-500 dark:text-slate-400">{activeConv.peerRole} • {activeConv.itemTitle}</div>
+                <div className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">{activeConv.peerRole} • {activeConv.itemTitle}</div>
               </div>
             </div>
 
@@ -185,7 +187,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
                   exchangeConfirmed 
                     ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800' 
-                    : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                    : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs'
                 }`}
               >
                 <CheckCircle2 className="w-3.5 h-3.5" />
@@ -193,7 +195,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
               </button>
               <button
                 onClick={onClose}
-                className="hidden md:inline-flex p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors cursor-pointer"
+                className="hidden md:inline-flex p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-300 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -202,18 +204,18 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
 
           {/* Quick Meetup Zone Alert */}
           {exchangeConfirmed && (
-            <div className="bg-emerald-50 dark:bg-emerald-950/60 px-4 py-2 border-b border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-900 dark:text-emerald-200">
+            <div className="bg-emerald-50 dark:bg-emerald-950/70 px-4 py-2.5 border-b border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-900 dark:text-emerald-200">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Meetup Confirmed at <strong>Moffitt Library 3rd Floor</strong>. Show Code <strong>#TRV-8821</strong></span>
+                <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>Meetup Confirmed at <strong>SJT Ground Floor Gazebo</strong>. Show Code <strong>#TRV-8821</strong></span>
               </div>
             </div>
           )}
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3">
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-white dark:bg-slate-900">
             <div className="text-center my-2">
-              <span className="text-[10px] px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-full font-medium">
+              <span className="text-[10px] px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full font-medium">
                 End-to-End Encrypted Campus Chat • Meet only in Verified Safe Zones
               </span>
             </div>
@@ -222,13 +224,13 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
               const isMe = m.sender === 'me';
               return (
                 <div key={m.id} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-xs ${
+                  <div className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-xs shadow-xs ${
                     isMe 
                       ? 'bg-emerald-600 text-white rounded-br-xs' 
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-bl-xs'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-bl-xs'
                   }`}>
                     <div>{m.text}</div>
-                    <div className={`text-[9px] mt-1 text-right ${isMe ? 'text-emerald-100' : 'text-slate-400 dark:text-slate-500'}`}>
+                    <div className={`text-[9px] mt-1 text-right ${isMe ? 'text-emerald-100' : 'text-slate-500 dark:text-slate-400'}`}>
                       {m.time}
                     </div>
                   </div>
@@ -238,13 +240,13 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
           </div>
 
           {/* Message Input Box */}
-          <form onSubmit={handleSendMessage} className="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 flex items-center gap-2">
+          <form onSubmit={handleSendMessage} className="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 flex items-center gap-2">
             <input
               type="text"
               placeholder={`Message ${activeConv.peerName} about ${activeConv.itemTitle}...`}
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              className="flex-1 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 font-medium"
+              className="flex-1 px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
             />
             <button
               type="submit"

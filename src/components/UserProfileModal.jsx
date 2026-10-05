@@ -81,7 +81,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex border-b border-slate-200 dark:border-slate-800 px-6 pt-2 bg-slate-50 dark:bg-slate-850 text-xs font-bold">
+        <div className="flex border-b border-slate-200 dark:border-slate-800 px-6 pt-2 bg-slate-50 dark:bg-slate-900 text-xs font-bold">
           <button
             onClick={() => setActiveTab('listings')}
             className={`py-3 px-4 border-b-2 transition-colors cursor-pointer ${
