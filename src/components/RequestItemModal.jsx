@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { 
   X, 
   Sparkles, 
-  Search, 
-  Clock, 
-  DollarSign, 
-  Users, 
-  CheckCircle2, 
-  AlertCircle 
+  Users
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -69,21 +64,22 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/75 backdrop-blur-sm overflow-hidden animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-lg bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-6 transition-colors"
+        className="relative w-full max-w-lg h-[90vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900 shrink-0">
           <div>
-            <h2 className="text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-rose-500" /> Post a Campus Resource Wishlist / Request
+            <h2 className="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-rose-500" /> Post Campus Resource Request
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Can't find a book or equipment? Let peers with underutilized assets find you!
+            <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400">
+              Can't find an item? Broadcast your need to verified peers
             </p>
           </div>
           <button
+            type="button"
             onClick={onClose}
             className="p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors cursor-pointer"
           >
@@ -91,7 +87,7 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4 text-xs">
+        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3.5 sm:space-y-4 text-xs pb-safe sm:pb-6">
           <div>
             <label className="block font-bold text-slate-800 dark:text-slate-200 mb-1">
               What do you need? *
@@ -99,21 +95,21 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
             <input
               type="text"
               required
-              placeholder="e.g. TI-84 Plus CE, or Organic Chemistry 2 Model Kit, or Desk Lamp"
+              placeholder="e.g. TI-84 Plus, or Organic Chemistry Kit, or Kettle"
               value={needTitle}
               onChange={(e) => setNeedTitle(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:border-rose-500 font-medium"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block font-bold text-slate-800 dark:text-slate-200 mb-1">
-                Course Code (if applicable)
+                Course Code (Optional)
               </label>
               <input
                 type="text"
-                placeholder="e.g. CS 61A or MATH 53"
+                placeholder="e.g. CSE2001 or MAT1011"
                 value={courseCode}
                 onChange={(e) => setCourseCode(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:border-rose-500 uppercase font-medium"
@@ -121,7 +117,7 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
             </div>
             <div>
               <label className="block font-bold text-slate-800 dark:text-slate-200 mb-1">
-                Max Willing to Pay / Rent ({currentCampus?.currency || '₹'})
+                Max Willing to Pay / Rent (₹)
               </label>
               <input
                 type="number"
@@ -155,7 +151,7 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
             </label>
             <textarea
               rows="3"
-              placeholder="e.g. Will buy outright or borrow for Midterm 1 on Thursday! Can meet at Moffitt or MLK."
+              placeholder="e.g. Will buy outright or borrow for Midterm on Thursday! Can meet at SJT Gazebo."
               value={details}
               onChange={(e) => setDetails(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:border-rose-500 font-medium"
@@ -165,21 +161,21 @@ export function RequestItemModal({ currentCampus, onClose, onAddRequest }) {
           <div className="p-3 bg-rose-50 dark:bg-rose-950/40 rounded-xl border border-rose-200 dark:border-rose-900/60 text-rose-900 dark:text-rose-200 flex items-start gap-2">
             <Users className="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
             <div className="text-[11px] leading-relaxed">
-              <strong>Campus Smart Match:</strong> Posting this notifies students in {currentCampus.shortName} who previously took this course or have idle gear in their dorm.
+              <strong>Campus Smart Match:</strong> Alerts students on {currentCampus.shortName} who took this course or have idle equipment in their dorm.
             </div>
           </div>
 
-          <div className="pt-2 flex justify-end gap-2">
+          <div className="pt-2 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-slate-600 dark:text-slate-400 font-bold hover:text-slate-900 dark:hover:text-white cursor-pointer"
+              className="py-2.5 px-4 text-slate-600 dark:text-slate-400 font-bold hover:text-slate-900 dark:hover:text-white cursor-pointer text-center"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold rounded-xl shadow-md shadow-rose-600/30 transition-all cursor-pointer"
+              className="py-3 px-5 bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-extrabold rounded-xl shadow-md shadow-rose-600/30 transition-all cursor-pointer text-center"
             >
               Broadcast Request
             </button>

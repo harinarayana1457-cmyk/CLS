@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { 
   X, 
-  Upload, 
   Leaf, 
-  DollarSign, 
-  CheckCircle2, 
   Sparkles, 
   Calendar, 
   ArrowLeftRight, 
   Gift, 
   ShoppingBag,
-  MapPin,
-  Image as ImageIcon
+  MapPin
 } from 'lucide-react';
 import { CATEGORIES, CONDITIONS } from '../data/categories';
 import confetti from 'canvas-confetti';
@@ -102,22 +98,23 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/75 backdrop-blur-sm overflow-hidden animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-6 transition-colors"
+        className="relative w-full max-w-2xl h-[92vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900 shrink-0">
           <div>
-            <h2 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
+            <h2 className="text-base sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> Circulate Asset in {currentCampus.shortName}
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Pass along academic resources or campus essentials to fellow verified peers
+            <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
+              Pass along academic resources or essentials to verified peers
             </p>
           </div>
           <button
+            type="button"
             onClick={onClose}
             className="p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors cursor-pointer"
           >
@@ -126,7 +123,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
+        <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-5 pb-safe sm:pb-6">
           {/* Circulation Mode Selector */}
           <div>
             <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-2">
@@ -188,7 +185,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
           </div>
 
           {/* Title & Category */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Resource Title *
@@ -196,7 +193,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
               <input
                 type="text"
                 required
-                placeholder="e.g. Campbell Biology 12th Ed or Mini Fridge 3.2 cu ft"
+                placeholder="e.g. Campbell Biology 12th Ed or Mini Fridge"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:border-emerald-500"
@@ -222,7 +219,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
           </div>
 
           {/* Academic Course Tag & Condition */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Course Code (Optional)
@@ -254,86 +251,100 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
             </div>
           </div>
 
-          {/* Pricing fields depending on mode */}
+          <div>
+            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Condition Notes (Optional)
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. Minor highlighter marks on Chapter 3, includes original cable"
+              value={conditionNotes}
+              onChange={(e) => setConditionNotes(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:border-emerald-500"
+            />
+          </div>
+
+          {/* Pricing depending on mode */}
           {mode === 'buy' && (
-            <div className="grid grid-cols-2 gap-4 p-3 bg-emerald-50/50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 p-3 bg-emerald-50/50 dark:bg-emerald-950/30 rounded-2xl border border-emerald-200 dark:border-emerald-800">
               <div>
-                <label className="block text-xs font-bold text-emerald-900 dark:text-emerald-300 mb-1">
-                  Your Student Asking Price ({currentCampus?.currency || '₹'}) *
+                <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                  Asking Price (₹) *
                 </label>
                 <input
                   type="number"
                   required
-                  placeholder="e.g. 450"
+                  placeholder="e.g. 250"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700 rounded-xl text-xs font-bold text-slate-900 dark:text-white focus:outline-none"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
-                  Original / Retail Price ({currentCampus?.currency || '₹'})
+                <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                  Original Retail Price (₹)
                 </label>
                 <input
                   type="number"
-                  placeholder="e.g. 1800 (to show savings)"
+                  placeholder="e.g. 1200"
                   value={originalPrice}
                   onChange={(e) => setOriginalPrice(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
                 />
               </div>
             </div>
           )}
 
           {mode === 'rent' && (
-            <div className="grid grid-cols-2 gap-4 p-3 bg-sky-50/50 dark:bg-sky-950/40 rounded-xl border border-sky-200 dark:border-sky-800">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 p-3 bg-sky-50/50 dark:bg-sky-950/30 rounded-2xl border border-sky-200 dark:border-sky-800">
               <div>
-                <label className="block text-xs font-bold text-sky-900 dark:text-sky-300 mb-1">
-                  Daily Rental Rate ({currentCampus?.currency || '₹'})
+                <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                  Daily Rental Rate (₹)
                 </label>
                 <input
                   type="number"
-                  placeholder="e.g. 30"
+                  placeholder="e.g. 50"
                   value={dailyRent}
                   onChange={(e) => setDailyRent(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-sky-300 dark:border-sky-700 rounded-xl text-xs font-bold text-slate-900 dark:text-white focus:outline-none"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-sky-900 dark:text-sky-300 mb-1">
-                  Full Semester Rate ({currentCampus?.currency || '₹'})
+                <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                  Semester Rental Rate (₹)
                 </label>
                 <input
                   type="number"
-                  placeholder="e.g. 350"
+                  placeholder="e.g. 400"
                   value={semesterRent}
                   onChange={(e) => setSemesterRent(e.target.value)}
-                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-sky-300 dark:border-sky-700 rounded-xl text-xs font-bold text-slate-900 dark:text-white focus:outline-none"
+                  className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500"
                 />
               </div>
             </div>
           )}
 
           {mode === 'swap' && (
-            <div className="p-3 bg-purple-50 dark:bg-purple-950/40 rounded-xl border border-purple-200 dark:border-purple-800">
-              <label className="block text-xs font-bold text-purple-900 dark:text-purple-300 mb-1">
-                What item(s) would you trade this for? *
+            <div className="p-3 bg-purple-50/50 dark:bg-purple-950/30 rounded-2xl border border-purple-200 dark:border-purple-800">
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                What are you looking to trade this for? *
               </label>
               <input
                 type="text"
                 required
-                placeholder="e.g. Looking for Multivariable Calculus Stewart or Desk Chair"
+                placeholder="e.g. EE lab equipment, Casio fx-991, or 2nd yr CS textbooks"
                 value={swapFor}
                 onChange={(e) => setSwapFor(e.target.value)}
-                className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-purple-300 dark:border-purple-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none"
+                className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-purple-500"
               />
             </div>
           )}
 
-          {/* Preferred Photo selection */}
+          {/* Quick Photo Selection */}
           <div>
-            <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1.5">
-              Select or Choose Photo
+            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
+              <span>Select Sample Asset Photo:</span>
+              <span className="text-[10px] text-slate-400">Tap to select</span>
             </label>
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
               {SAMPLE_PHOTOS.map((photo) => (
@@ -341,14 +352,14 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
                   key={photo.label}
                   type="button"
                   onClick={() => setSelectedImage(photo.url)}
-                  className={`relative rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
+                  className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
                     selectedImage === photo.url
-                      ? 'border-emerald-600 scale-105 shadow-md'
-                      : 'border-transparent opacity-70 hover:opacity-100'
+                      ? 'border-emerald-500 ring-2 ring-emerald-500/30 scale-102'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-slate-400'
                   }`}
                 >
                   <img src={photo.url} alt={photo.label} className="w-full h-full object-cover" />
-                  <span className="absolute bottom-0 inset-x-0 bg-slate-950/70 text-[9px] text-white py-0.5 px-1 truncate">
+                  <span className="absolute bottom-0 inset-x-0 bg-slate-950/70 text-[8px] sm:text-[9px] text-white py-0.5 px-1 truncate">
                     {photo.label}
                   </span>
                 </button>
@@ -357,7 +368,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
           </div>
 
           {/* Description & Meetup spot */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Description & Course Insights
@@ -373,7 +384,7 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
 
             <div>
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> Preferred Campus Safe Meetup Zone:
+                <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> Preferred Campus Safe Zone:
               </label>
               <select
                 value={preferredMeetup}
@@ -390,33 +401,33 @@ export function CreateListingModal({ currentCampus, onClose, onAddListing }) {
           </div>
 
           {/* Live Environmental Contribution Banner */}
-          <div className="p-3.5 bg-emerald-50 dark:bg-emerald-950/60 rounded-2xl border border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-900 dark:text-emerald-200">
+          <div className="p-3 bg-emerald-50 dark:bg-emerald-950/60 rounded-2xl border border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-900 dark:text-emerald-200">
             <div className="flex items-center gap-2">
-              <Leaf className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <div>
                 <span className="font-bold">Your Circular Karma:</span>
-                <div className="text-[11px] text-emerald-800 dark:text-emerald-300">
-                  Diverts ~{estimatedCO2} kg CO₂ • Saves campus peers ~{currentCampus?.currency || '₹'}{estimatedSavings}
+                <div className="text-[10px] sm:text-[11px] text-emerald-800 dark:text-emerald-300">
+                  Diverts ~{estimatedCO2} kg CO₂ • Saves peers ~₹{estimatedSavings}
                 </div>
               </div>
             </div>
-            <span className="px-2 py-1 rounded bg-emerald-200/80 dark:bg-emerald-900 font-extrabold text-[10px] text-emerald-900 dark:text-emerald-200">
-              +45 Karma Pts
+            <span className="px-2 py-1 rounded bg-emerald-200/80 dark:bg-emerald-900 font-extrabold text-[10px] text-emerald-900 dark:text-emerald-200 shrink-0">
+              +45 Pts
             </span>
           </div>
 
           {/* Submit Button */}
-          <div className="pt-2 flex items-center justify-end gap-3 border-t border-slate-100 dark:border-slate-800">
+          <div className="pt-2 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2 sm:gap-3 border-t border-slate-100 dark:border-slate-800">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white cursor-pointer"
+              className="py-2.5 px-4 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white cursor-pointer text-center"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold rounded-xl shadow-md shadow-emerald-600/30 transition-all cursor-pointer flex items-center gap-1.5"
+              className="py-3 px-6 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-extrabold rounded-xl shadow-md shadow-emerald-600/30 transition-all cursor-pointer flex items-center justify-center gap-1.5"
             >
               <Sparkles className="w-4 h-4" />
               <span>Publish & Circulate Asset</span>
