@@ -57,16 +57,16 @@ export function HeroBanner({
           </div>
         </div>
 
-        {/* Hero Title with High Contrast Drop Shadow */}
-        <h1 className="text-2xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
+        {/* Hero Title with High Contrast Shadow */}
+        <h1 className="text-2xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight [text-shadow:0_3px_20px_rgba(0,0,0,0.9)]">
           Circulate Academic Resources.<br />
-          <span className="bg-gradient-to-r from-white via-yellow-200 to-sky-200 bg-clip-text text-transparent drop-shadow-lg">
+          <span className="bg-gradient-to-r from-white via-yellow-200 to-sky-200 bg-clip-text text-transparent">
             Share Everyday Campus Essentials.
           </span>
         </h1>
 
         {/* Hero Subtitle */}
-        <p className="max-w-3xl mx-auto text-xs sm:text-base md:text-lg text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-relaxed font-medium px-2">
+        <p className="max-w-3xl mx-auto text-xs sm:text-base md:text-lg text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.95)] leading-relaxed font-medium px-2">
           Trove empowers university communities to <strong className="text-yellow-300">buy, sell, rent, swap, and donate</strong> underutilized assets. 
           Cut semester textbook costs by up to 80%, keep dorm gear out of landfills, and trade safely with verified <span className="text-sky-300 font-bold underline decoration-sky-300/80">@{currentCampus.domain}</span> peers.
         </p>

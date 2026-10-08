@@ -70,6 +70,7 @@ export function ListingCard({
   return (
     <div 
       onClick={() => onSelectListing(listing)}
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 380px' }}
       className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 hover:border-sky-500/50 dark:hover:border-sky-500/50 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-sky-500/5 dark:hover:shadow-sky-500/10 hover:-translate-y-0.5 sm:hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer relative"
     >
       {/* Card Header & Image */}

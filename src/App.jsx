@@ -222,22 +222,24 @@ export function App() {
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-200 relative">
       {/* 
-        Ambient Spectral Aura Glow Orbs 
-        Infuses the entire page with the artwork's fiery crimson, solar yellow, 
-        and electric cyan radiance across both light and dark mode.
+        Ambient Spectral Aura Glow Layer (Hardware-Accelerated Single Texture)
+        Renders the vibrant crimson, solar yellow, electric cyan, violet, and scarlet
+        orbs using pure radial gradients with zero blur filter overhead for silky 120fps scrolling.
       */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-60 dark:opacity-75">
-        {/* Top-Left Fiery Crimson Orb */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 sm:w-[600px] sm:h-[600px] bg-gradient-to-br from-red-500/35 via-rose-500/25 to-transparent rounded-full blur-3xl"></div>
-        {/* Top-Right Solar Yellow Orb */}
-        <div className="absolute top-1/4 -right-20 w-80 h-80 sm:w-[520px] sm:h-[520px] bg-gradient-to-bl from-yellow-400/35 via-amber-400/25 to-transparent rounded-full blur-3xl"></div>
-        {/* Center-Left Electric Cyan Pool */}
-        <div className="absolute top-1/2 -left-20 w-96 h-96 sm:w-[550px] sm:h-[550px] bg-gradient-to-tr from-sky-500/30 via-blue-500/20 to-transparent rounded-full blur-3xl"></div>
-        {/* Center-Right Cosmic Violet Aura */}
-        <div className="absolute top-2/3 -right-24 w-80 h-80 sm:w-[480px] sm:h-[480px] bg-gradient-to-tl from-purple-500/25 via-indigo-500/20 to-transparent rounded-full blur-3xl"></div>
-        {/* Bottom-Right Scarlet Orb */}
-        <div className="absolute bottom-10 -right-20 w-96 h-96 sm:w-[600px] sm:h-[600px] bg-gradient-to-tl from-red-600/35 via-rose-500/25 to-transparent rounded-full blur-3xl"></div>
-      </div>
+      <div 
+        className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-60 dark:opacity-75"
+        style={{
+          transform: 'translateZ(0)',
+          willChange: 'transform',
+          background: `
+            radial-gradient(circle at 8% 12%, rgba(239, 68, 68, 0.22) 0%, rgba(244, 63, 94, 0.12) 30%, transparent 60%),
+            radial-gradient(circle at 92% 24%, rgba(250, 204, 21, 0.22) 0%, rgba(245, 158, 11, 0.12) 28%, transparent 55%),
+            radial-gradient(circle at 12% 52%, rgba(14, 165, 233, 0.20) 0%, rgba(59, 130, 246, 0.10) 30%, transparent 58%),
+            radial-gradient(circle at 88% 68%, rgba(168, 85, 247, 0.18) 0%, rgba(99, 102, 241, 0.10) 28%, transparent 55%),
+            radial-gradient(circle at 82% 92%, rgba(220, 38, 38, 0.22) 0%, rgba(239, 68, 68, 0.12) 30%, transparent 60%)
+          `
+        }}
+      />
 
       {/* Top Global Navigation Bar */}
       <Navbar
