@@ -40,7 +40,7 @@ export function HeroBanner({
         <img
           src="/hero-bg.jpg"
           alt="Trove Academic Circulation Background"
-          className="w-full h-full object-cover object-center scale-102"
+          className="w-full h-full object-cover object-center"
           fetchPriority="high"
           decoding="async"
         />
