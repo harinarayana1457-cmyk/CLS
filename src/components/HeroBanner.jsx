@@ -12,7 +12,6 @@ import {
   Search,
   PlusCircle
 } from 'lucide-react';
-import { SpectralBackground } from './SpectralBackground';
 
 export function HeroBanner({ 
   currentCampus, 
@@ -34,14 +33,19 @@ export function HeroBanner({
   return (
     <div className="relative w-full max-w-full overflow-hidden text-white pt-8 sm:pt-14 pb-16 sm:pb-24 px-3 sm:px-6">
       {/* 
-        Dynamic Programmatic Spectral Artwork Background 
-        (100% pure code — renders the azure sky, fiery red orbs, sunshine yellow, 
-        moire wave curves, and stardust particles without any static images)
+        Exact Reference Artwork Background (Cleaned, 100% zero text)
+        Rendered as an optimized image for instant crispness and 120fps scrolling.
       */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-        <SpectralBackground intensity={1.25} interactive={true} />
-        {/* Gentle transition at bottom edge only, keeping 90% of the artwork crystal clear */}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+        <img
+          src="/hero-bg.jpg"
+          alt="Trove Academic Circulation Background"
+          className="w-full h-full object-cover object-center scale-102"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gentle transition at bottom edge only, keeping the artwork crystal clear */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-4 sm:space-y-6">
