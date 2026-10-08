@@ -25,7 +25,7 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40 dark:border-emerald-800 mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300/40 dark:border-sky-800 mb-2">
               <RotateCw className="w-3.5 h-3.5" /> Campus Circular Economy Impact
             </div>
             <h2 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -36,17 +36,17 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
             </p>
           </div>
           
-          <div className="flex items-center gap-3 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-3 shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
+          <div className="flex items-center gap-3 bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 rounded-2xl p-3 shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center font-bold text-base sm:text-lg shrink-0">
               🌱
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] sm:text-xs font-bold text-emerald-900 dark:text-emerald-200 truncate">{currentCampus.shortName} Zero-Waste 2026</div>
+              <div className="text-[11px] sm:text-xs font-bold text-sky-900 dark:text-sky-200 truncate">{currentCampus.shortName} Zero-Waste 2026</div>
               <div className="flex items-center gap-2 mt-1">
-                <div className="w-24 sm:w-32 bg-emerald-200 dark:bg-emerald-900 rounded-full h-2 overflow-hidden">
-                  <div className="bg-emerald-600 dark:bg-emerald-400 h-full rounded-full" style={{ width: '74%' }}></div>
+                <div className="w-24 sm:w-32 bg-sky-200 dark:bg-sky-900 rounded-full h-2 overflow-hidden">
+                  <div className="bg-sky-600 dark:bg-sky-400 h-full rounded-full" style={{ width: '74%' }}></div>
                 </div>
-                <span className="text-[11px] sm:text-xs font-extrabold text-emerald-800 dark:text-emerald-300">74% Target</span>
+                <span className="text-[11px] sm:text-xs font-extrabold text-sky-800 dark:text-sky-300">74% Target</span>
               </div>
             </div>
           </div>
@@ -70,33 +70,33 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/60 dark:bg-emerald-950/30 p-4 sm:p-5 space-y-2.5 sm:space-y-3 shadow-xs">
+          <div className="rounded-2xl border border-sky-300 dark:border-sky-800 bg-sky-50/60 dark:bg-sky-950/30 p-4 sm:p-5 space-y-2.5 sm:space-y-3 shadow-xs">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5">
-                <RotateCw className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" /> Trove Student Loop
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-800 dark:text-sky-300 flex items-center gap-1.5">
+                <RotateCw className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" /> Trove Student Loop
               </span>
-              <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded bg-emerald-200 dark:bg-emerald-900/80 text-emerald-900 dark:text-emerald-200 font-bold">100% Circular</span>
+              <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded bg-sky-200 dark:bg-sky-900/80 text-sky-900 dark:text-sky-200 font-bold">100% Circular</span>
             </div>
-            <p className="text-[11px] sm:text-xs text-emerald-950/90 dark:text-emerald-200/90 leading-relaxed">
+            <p className="text-[11px] sm:text-xs text-sky-950/90 dark:text-sky-200/90 leading-relaxed">
               Acquire gently-used assets from peers or rent for the exact weeks you need ➔ Safely exchange at campus safe zones ➔ Resell or pay-it-forward to juniors when graduating.
             </p>
-            <div className="text-[11px] sm:text-xs font-semibold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5 pt-1 border-t border-emerald-200 dark:border-emerald-800">
+            <div className="text-[11px] sm:text-xs font-semibold text-sky-800 dark:text-sky-300 flex items-center gap-1.5 pt-1 border-t border-sky-200 dark:border-sky-800">
               <span>Community Benefit:</span>
-              <strong className="text-emerald-900 dark:text-emerald-100 font-extrabold">70%+ cash saved & zero landfill footprint</strong>
+              <strong className="text-sky-900 dark:text-sky-100 font-extrabold">70%+ cash saved & zero landfill footprint</strong>
             </div>
           </div>
         </div>
 
         {/* Interactive Personal Impact Calculator */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/70 text-white rounded-3xl p-4 sm:p-8 shadow-2xl border border-slate-800/80 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-sky-950/80 text-white rounded-3xl p-4 sm:p-8 shadow-2xl border border-slate-800/80 relative overflow-hidden">
           {/* Ambient decorative blur circle */}
-          <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Calculator Controls */}
             <div className="lg:col-span-7 space-y-5">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
                   <Sparkles className="w-3.5 h-3.5" /> Interactive Circularity Estimator
                 </div>
                 <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight leading-snug">
@@ -112,7 +112,7 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                 <div>
                   <div className="flex justify-between items-center text-xs font-semibold mb-2">
                     <span className="text-slate-200 flex items-center gap-1.5 text-[11px] sm:text-xs">📚 Textbooks Used/Bought:</span>
-                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[11px] sm:text-xs border border-emerald-500/30">
+                    <span className="px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-bold text-[11px] sm:text-xs border border-sky-500/30">
                       {textbooksCount} {textbooksCount === 1 ? 'book' : 'books'}
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                 <div>
                   <div className="flex justify-between items-center text-xs font-semibold mb-2">
                     <span className="text-slate-200 flex items-center gap-1.5 text-[11px] sm:text-xs">🔬 Lab Gear / Calculators:</span>
-                    <span className="px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-bold text-[11px] sm:text-xs border border-sky-500/30">
+                    <span className="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold text-[11px] sm:text-xs border border-indigo-500/30">
                       {techRentCount} {techRentCount === 1 ? 'item' : 'items'}
                     </span>
                   </div>
@@ -188,9 +188,9 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
             </div>
 
             {/* Calculated Output Cards */}
-            <div className="lg:col-span-5 bg-slate-800/80 dark:bg-slate-900/90 rounded-2xl p-4 sm:p-6 border border-emerald-500/30 shadow-xl space-y-3.5 sm:space-y-4 backdrop-blur-md">
+            <div className="lg:col-span-5 bg-slate-800/80 dark:bg-slate-900/90 rounded-2xl p-4 sm:p-6 border border-sky-500/30 shadow-xl space-y-3.5 sm:space-y-4 backdrop-blur-md">
               <div className="text-center pb-3 border-b border-slate-700/80">
-                <span className="text-[10px] sm:text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+                <span className="text-[10px] sm:text-[11px] font-bold text-sky-400 uppercase tracking-wider">
                   Your Semester Impact With Trove
                 </span>
                 <div className="text-3xl sm:text-5xl font-black text-white tracking-tight mt-1 drop-shadow-sm">
@@ -201,7 +201,7 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
 
               <div className="grid grid-cols-2 gap-2.5 sm:gap-3 text-left">
                 <div className="bg-slate-900/80 dark:bg-slate-950 p-3 rounded-xl border border-slate-700/60">
-                  <div className="flex items-center gap-1.5 text-teal-400 text-[11px] sm:text-xs font-bold">
+                  <div className="flex items-center gap-1.5 text-sky-400 text-[11px] sm:text-xs font-bold">
                     <Leaf className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> CO₂ Offset
                   </div>
                   <div className="text-lg sm:text-xl font-black text-white mt-1">{estimatedCO2.toFixed(1)} kg</div>
@@ -217,8 +217,8 @@ export function ImpactDashboard({ currentCampus, userCirculationsCount = 4 }) {
                 </div>
               </div>
 
-              <div className="p-2.5 sm:p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2 text-xs text-emerald-300">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" />
+              <div className="p-2.5 sm:p-3 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center gap-2 text-xs text-sky-300">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 shrink-0" />
                 <span className="text-[11px] sm:text-xs leading-snug">
                   Unlocks <strong>"Campus Eco Sentinel"</strong> verified student badge this term! ({userCirculationsCount} active items)
                 </span>

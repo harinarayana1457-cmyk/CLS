@@ -28,7 +28,7 @@ export function MobileBottomNav({
           onClick={onExploreClick}
           className={`flex flex-col items-center justify-center h-full py-1 transition-colors cursor-pointer ${
             !isSavedActive 
-              ? 'text-emerald-600 dark:text-emerald-400 font-bold' 
+              ? 'text-sky-600 dark:text-sky-400 font-bold' 
               : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
           }`}
         >
@@ -62,7 +62,7 @@ export function MobileBottomNav({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="w-12 h-12 -mt-4 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white flex items-center justify-center shadow-lg shadow-emerald-600/35 active:scale-90 transition-transform cursor-pointer border-2 border-white dark:border-slate-900"
+            className="w-12 h-12 -mt-4 rounded-full bg-gradient-to-tr from-sky-500 via-indigo-600 to-rose-500 hover:from-sky-600 hover:to-rose-600 text-white flex items-center justify-center shadow-lg shadow-sky-600/35 active:scale-90 transition-transform cursor-pointer border-2 border-white dark:border-slate-900"
             title="Circulate an Item"
             aria-label="Circulate Asset"
           >
@@ -74,12 +74,12 @@ export function MobileBottomNav({
         <button
           type="button"
           onClick={onOpenChatModal}
-          className="relative flex flex-col items-center justify-center h-full py-1 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer"
+          className="relative flex flex-col items-center justify-center h-full py-1 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-pointer"
         >
           <div className="relative">
             <MessageSquare className="w-5 h-5" />
             {unreadCount > 0 && (
-              <span className="absolute -top-1.5 -right-2 min-w-4 h-4 px-1 bg-emerald-600 text-white text-[9px] font-black rounded-full flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1.5 -right-2 min-w-4 h-4 px-1 bg-sky-600 text-white text-[9px] font-black rounded-full flex items-center justify-center shadow-xs">
                 {unreadCount}
               </span>
             )}
@@ -91,13 +91,13 @@ export function MobileBottomNav({
         <button
           type="button"
           onClick={onOpenProfileModal}
-          className="flex flex-col items-center justify-center h-full py-1 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer"
+          className="flex flex-col items-center justify-center h-full py-1 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-pointer"
         >
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
               alt="Ananya Profile"
-              className="w-5 h-5 rounded-full object-cover border border-emerald-500"
+              className="w-5 h-5 rounded-full object-cover border border-sky-500"
             />
             <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-500 border border-white dark:border-slate-900 rounded-full"></span>
           </div>

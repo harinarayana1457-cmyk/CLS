@@ -17,7 +17,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Profile Banner */}
-        <div className="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-4 sm:p-6 relative shrink-0">
+        <div className="bg-gradient-to-r from-sky-900 via-indigo-950 to-slate-900 text-white p-4 sm:p-6 relative shrink-0">
           <button
             type="button"
             onClick={onClose}
@@ -34,7 +34,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
                 alt="Ananya Iyer"
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-4 border-white/90 shadow-md"
               />
-              <span className="absolute bottom-0 right-0 w-5 h-5 bg-emerald-400 border-2 border-slate-900 rounded-full flex items-center justify-center text-[10px] text-slate-950 font-bold">
+              <span className="absolute bottom-0 right-0 w-5 h-5 bg-sky-400 border-2 border-slate-900 rounded-full flex items-center justify-center text-[10px] text-slate-950 font-bold">
                 ✓
               </span>
             </div>
@@ -42,7 +42,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
             <div className="space-y-1 min-w-0">
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
                 <h2 className="text-lg sm:text-xl font-black text-white">Ananya Iyer</h2>
-                <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 flex items-center gap-1">
+                <span className="px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-sky-400/20 text-sky-300 border border-sky-400/40 flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" /> @{currentCampus.domain} Verified
                 </span>
               </div>
@@ -54,7 +54,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
                   <Star className="w-3.5 h-3.5 fill-amber-300" /> 4.96 Karma
                 </span>
                 <span>•</span>
-                <span className="text-emerald-200 font-semibold">34 Handoffs</span>
+                <span className="text-sky-200 font-semibold">34 Handoffs</span>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
           <div className="mt-4 grid grid-cols-3 gap-2 bg-slate-950/40 backdrop-blur-xs p-2.5 sm:p-3 rounded-xl border border-white/10 text-center">
             <div>
               <div className="text-[10px] sm:text-xs text-slate-300">Student Savings</div>
-              <div className="text-sm sm:text-base font-black text-emerald-300">{currentCampus?.currency || '₹'}12,400</div>
+              <div className="text-sm sm:text-base font-black text-sky-300">{currentCampus?.currency || '₹'}12,400</div>
             </div>
             <div>
               <div className="text-[10px] sm:text-xs text-slate-300">CO₂ Diverted</div>
@@ -83,7 +83,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
             onClick={() => setActiveTab('listings')}
             className={`py-3 px-3 sm:px-4 border-b-2 transition-colors cursor-pointer shrink-0 ${
               activeTab === 'listings'
-                ? 'border-emerald-600 text-emerald-700 dark:text-emerald-400'
+                ? 'border-sky-600 text-sky-700 dark:text-sky-400'
                 : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
           >
@@ -94,7 +94,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
             onClick={() => setActiveTab('badges')}
             className={`py-3 px-3 sm:px-4 border-b-2 transition-colors cursor-pointer shrink-0 ${
               activeTab === 'badges'
-                ? 'border-emerald-600 text-emerald-700 dark:text-emerald-400'
+                ? 'border-sky-600 text-sky-700 dark:text-sky-400'
                 : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
           >
@@ -105,7 +105,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
             onClick={() => setActiveTab('impact')}
             className={`py-3 px-3 sm:px-4 border-b-2 transition-colors cursor-pointer shrink-0 ${
               activeTab === 'impact'
-                ? 'border-emerald-600 text-emerald-700 dark:text-emerald-400'
+                ? 'border-sky-600 text-sky-700 dark:text-sky-400'
                 : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
           >
@@ -138,7 +138,7 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
                         </div>
                       </div>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 font-bold text-[10px] shrink-0 border dark:border-emerald-800">
+                    <span className="px-2.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 font-bold text-[10px] shrink-0 border border-sky-200 dark:border-sky-800">
                       Active
                     </span>
                   </div>
@@ -149,11 +149,11 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
 
           {activeTab === 'badges' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-start gap-2.5">
+              <div className="p-3 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800 flex items-start gap-2.5">
                 <span className="text-2xl shrink-0">🌱</span>
                 <div>
-                  <div className="font-bold text-emerald-950 dark:text-emerald-200">Eco Sentinel Level 3</div>
-                  <div className="text-[11px] text-emerald-800 dark:text-emerald-300">Diverted over 50kg of carbon and dorm waste.</div>
+                  <div className="font-bold text-sky-950 dark:text-sky-200">Eco Sentinel Level 3</div>
+                  <div className="text-[11px] text-sky-800 dark:text-sky-300">Diverted over 50kg of carbon and dorm waste.</div>
                 </div>
               </div>
 
@@ -188,22 +188,22 @@ export function UserProfileModal({ currentCampus, userListings = [], onClose }) 
               <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
                 <div className="flex items-center justify-between font-bold text-slate-900 dark:text-white">
                   <span>Semester Circular Contribution</span>
-                  <span className="text-emerald-600 dark:text-emerald-400">Top 5% on {currentCampus.shortName}</span>
+                  <span className="text-sky-600 dark:text-sky-400">Top 5% on {currentCampus.shortName}</span>
                 </div>
                 <div className="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                  <div className="bg-emerald-500 h-full rounded-full" style={{ width: '85%' }}></div>
+                  <div className="bg-sky-500 h-full rounded-full" style={{ width: '85%' }}></div>
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">
                   By circulating 34 textbooks, lab tools, and dorm items, you've saved peers ₹12,400 this academic year and kept 22.5 kg of reusable goods out of landfills.
                 </p>
               </div>
 
-              <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 flex items-center justify-between">
+              <div className="p-3 rounded-xl bg-sky-50 dark:bg-sky-950/50 border border-sky-200 dark:border-sky-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="font-semibold text-emerald-900 dark:text-emerald-200">Official Campus Eco Recognition</span>
+                  <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                  <span className="font-semibold text-sky-900 dark:text-sky-200">Official Campus Eco Recognition</span>
                 </div>
-                <span className="font-bold text-emerald-700 dark:text-emerald-300">Verified</span>
+                <span className="font-bold text-sky-700 dark:text-sky-300">Verified</span>
               </div>
             </div>
           )}

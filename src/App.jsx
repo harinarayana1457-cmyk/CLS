@@ -220,7 +220,7 @@ export function App() {
   }, [listings]);
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-emerald-500 selection:text-white transition-colors duration-200">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-200">
       {/* Top Global Navigation Bar */}
       <Navbar
         currentCampus={currentCampus}
@@ -287,7 +287,7 @@ export function App() {
             <button
               type="button"
               onClick={() => setIsCreateModalOpen(true)}
-              className="flex-1 sm:flex-initial justify-center px-3.5 sm:px-4 py-2 rounded-xl text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm shadow-emerald-600/30 transition-all flex items-center gap-1.5 cursor-pointer"
+              className="flex-1 sm:flex-initial justify-center px-3.5 sm:px-4 py-2 rounded-xl text-xs font-extrabold text-white bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 shadow-sm shadow-sky-600/30 transition-all flex items-center gap-1.5 cursor-pointer"
             >
               <PlusCircle className="w-4 h-4 shrink-0" />
               <span>Circulate Asset</span>
@@ -328,7 +328,7 @@ export function App() {
         ) : (
           /* Empty State */
           <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 text-center max-w-lg mx-auto space-y-4 shadow-xs">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center mx-auto">
               <Inbox className="w-7 h-7 sm:w-8 sm:h-8" />
             </div>
             <div>
@@ -350,7 +350,7 @@ export function App() {
               <button
                 type="button"
                 onClick={() => setIsRequestModalOpen(true)}
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+                className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
               >
                 Post Request
               </button>
@@ -359,7 +359,7 @@ export function App() {
         )}
 
         {/* Campus Community Live Wishlist / Request Bulletin */}
-        <div className="mt-8 sm:mt-14 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950 text-white rounded-3xl p-4 sm:p-8 shadow-xl border dark:border-slate-800">
+        <div className="mt-8 sm:mt-14 bg-gradient-to-br from-slate-900 via-slate-900 to-sky-950/80 dark:from-slate-950 dark:via-slate-900 dark:to-sky-950/80 text-white rounded-3xl p-4 sm:p-8 shadow-xl border border-slate-800">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-700/80">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 mb-2">
@@ -396,7 +396,7 @@ export function App() {
                   <h4 className="text-xs font-bold text-white leading-snug">
                     {req.need}
                   </h4>
-                  <div className="mt-2 text-xs font-extrabold text-emerald-400">
+                  <div className="mt-2 text-xs font-extrabold text-sky-400">
                     Budget / Trade: {req.budget}
                   </div>
                 </div>
@@ -408,7 +408,7 @@ export function App() {
                     onClick={() => {
                       setIsChatModalOpen(true);
                     }}
-                    className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1 cursor-pointer"
+                    className="text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1 cursor-pointer"
                   >
                     <span>I Can Provide This</span>
                     <ArrowRight className="w-3 h-3" />
@@ -422,7 +422,7 @@ export function App() {
         {/* Real Student Peer Reviews & Verification Testimonials */}
         <div className="pt-2 sm:pt-4 space-y-4">
           <div className="text-center max-w-xl mx-auto space-y-1">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" /> Trusted Peer Network
             </div>
             <h3 className="text-lg sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -451,7 +451,7 @@ export function App() {
                     {'★'.repeat(rev.rating)}
                   </div>
                 </div>
-                <div className="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border dark:border-emerald-800 px-2 py-0.5 rounded-md inline-block">
+                <div className="text-[11px] font-bold text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 px-2 py-0.5 rounded-md inline-block">
                   Item: {rev.itemTitle}
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed italic">

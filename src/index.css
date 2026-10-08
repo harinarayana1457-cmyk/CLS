@@ -4,10 +4,12 @@
 
 @layer base {
   :root {
-    --brand-primary: #059669;
-    --brand-dark: #064e3b;
-    --brand-light: #ecfdf5;
-    --brand-amber: #d97706;
+    --brand-primary: #0284c7;
+    --brand-indigo: #3b82f6;
+    --brand-rose: #f43f5e;
+    --brand-amber: #f59e0b;
+    --brand-dark: #070e1e;
+    --brand-light: #f0f7ff;
   }
 
   html, body {
@@ -35,7 +37,7 @@
   }
 
   .dark body {
-    background-color: #070d18;
+    background-color: #050b14;
     color: #f8fafc;
   }
 }
@@ -53,31 +55,31 @@ input[type="range"]::-webkit-slider-thumb {
   height: 22px;
   width: 22px;
   border-radius: 50%;
-  background: #10b981;
+  background: linear-gradient(135deg, #0284c7, #f43f5e);
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.5);
   border: 2px solid #ffffff;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 input[type="range"]::-webkit-slider-thumb:hover,
 input[type="range"]::-webkit-slider-thumb:active {
   transform: scale(1.2);
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.75);
 }
 input[type="range"]::-moz-range-thumb {
   height: 22px;
   width: 22px;
   border-radius: 50%;
-  background: #10b981;
+  background: linear-gradient(135deg, #0284c7, #f43f5e);
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.5);
   border: 2px solid #ffffff;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 input[type="range"]::-moz-range-thumb:hover,
 input[type="range"]::-moz-range-thumb:active {
   transform: scale(1.2);
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.75);
 }
 
 /* Mobile tap & touch optimization */

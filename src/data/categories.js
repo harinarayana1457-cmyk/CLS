@@ -10,7 +10,7 @@ export const CIRCULATION_MODES = [
     label: 'Buy / Sell',
     tagline: 'Student-to-student discounts (60-80% off retail)',
     icon: 'Tag',
-    badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300'
+    badgeClass: 'bg-sky-100 text-sky-800 border-sky-300'
   },
   {
     id: 'rent',

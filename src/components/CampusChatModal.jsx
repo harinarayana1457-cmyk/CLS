@@ -153,7 +153,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                   }}
                   className={`w-full p-3.5 text-left flex items-start gap-3 transition-colors cursor-pointer ${
                     isSelected 
-                      ? 'bg-white dark:bg-slate-800 shadow-xs border-l-4 border-emerald-500' 
+                      ? 'bg-white dark:bg-slate-800 shadow-xs border-l-4 border-sky-500' 
                       : 'hover:bg-slate-100/80 dark:hover:bg-slate-800/60 bg-transparent'
                   }`}
                 >
@@ -163,7 +163,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                       <span className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">{c.peerName}</span>
                       <span className="text-[10px] text-slate-500 dark:text-slate-400">{lastMsg?.time}</span>
                     </div>
-                    <div className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 truncate">{c.itemTitle}</div>
+                    <div className="text-[11px] font-semibold text-sky-700 dark:text-sky-400 truncate">{c.itemTitle}</div>
                     <p className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-0.5">{lastMsg?.text}</p>
                   </div>
                 </button>
@@ -193,7 +193,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="font-bold text-slate-900 dark:text-slate-100 text-xs sm:text-sm truncate">{activeConv.peerName}</span>
-                  <span className="text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 font-bold border dark:border-emerald-800 flex items-center shrink-0">
+                  <span className="text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 font-bold border border-sky-200 dark:border-sky-800 flex items-center shrink-0">
                     <ShieldCheck className="w-3 h-3 mr-0.5" /> Verified
                   </span>
                 </div>
@@ -208,7 +208,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1 cursor-pointer ${
                   exchangeConfirmed 
                     ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800' 
-                    : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs'
+                    : 'bg-sky-600 hover:bg-sky-700 text-white shadow-xs'
                 }`}
               >
                 <CheckCircle2 className="w-3.5 h-3.5" />
@@ -228,9 +228,9 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
 
           {/* Quick Meetup Zone Alert */}
           {exchangeConfirmed && (
-            <div className="bg-emerald-50 dark:bg-emerald-950/70 px-3.5 py-2 border-b border-emerald-200 dark:border-emerald-800 flex items-center justify-between text-xs text-emerald-900 dark:text-emerald-200">
+            <div className="bg-sky-50 dark:bg-sky-950/70 px-3.5 py-2 border-b border-sky-200 dark:border-sky-800 flex items-center justify-between text-xs text-sky-900 dark:text-sky-200">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
                 <span className="text-[11px] sm:text-xs">Meetup: <strong>SJT Gazebo</strong> • Code <strong>#TRV-8821</strong></span>
               </div>
             </div>
@@ -254,7 +254,7 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
                   <div
                     className={`max-w-[85%] sm:max-w-xs md:max-w-sm rounded-2xl px-3.5 py-2 text-xs leading-relaxed ${
                       isMe
-                        ? 'bg-emerald-600 text-white rounded-br-xs'
+                        ? 'bg-sky-600 text-white rounded-br-xs'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-bl-xs'
                     }`}
                   >
@@ -273,12 +273,12 @@ export function CampusChatModal({ currentCampus, initialListing, onClose }) {
               placeholder={`Message ${activeConv.peerName}...`}
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              className="flex-1 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500"
+              className="flex-1 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:outline-none focus:border-sky-500"
             />
             <button
               type="submit"
               disabled={!inputMessage.trim()}
-              className="p-2 sm:p-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 text-white rounded-xl shadow-xs transition-colors cursor-pointer shrink-0"
+              className="p-2 sm:p-2.5 bg-sky-600 hover:bg-sky-700 disabled:opacity-40 text-white rounded-xl shadow-xs transition-colors cursor-pointer shrink-0"
               aria-label="Send message"
             >
               <Send className="w-4 h-4 sm:w-4.5 sm:h-4.5" />

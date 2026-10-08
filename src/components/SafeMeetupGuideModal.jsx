@@ -17,7 +17,7 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-900 to-emerald-950 text-white p-4 sm:p-6 relative shrink-0">
+        <div className="bg-gradient-to-r from-slate-900 to-sky-950 text-white p-4 sm:p-6 relative shrink-0">
           <button
             type="button"
             onClick={onClose}
@@ -26,7 +26,7 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-sky-500/20 text-sky-400 border border-sky-500/30 mb-2">
             <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 100% Safe Campus Protocol
           </div>
           <h2 className="text-lg sm:text-2xl font-black tracking-tight text-white">
@@ -42,7 +42,7 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
           {/* Safe Zones List */}
           <div>
             <h3 className="font-extrabold text-slate-900 dark:text-white text-xs sm:text-sm mb-2.5 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" /> Designated Safe Trade Spots on {currentCampus.shortName}:
+              <MapPin className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" /> Designated Safe Trade Spots on {currentCampus.shortName}:
             </h3>
             <div className="space-y-2">
               {currentCampus.meetupZones.map((zone, idx) => (
@@ -51,7 +51,7 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
                   className="p-3 sm:p-3.5 rounded-xl border border-slate-200 dark:border-slate-750 bg-slate-50/80 dark:bg-slate-800/80 flex items-center justify-between gap-2"
                 >
                   <div className="flex items-start gap-2.5 min-w-0">
-                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px] sm:text-xs shrink-0 mt-0.5">
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-sky-600 text-white flex items-center justify-center font-bold text-[10px] sm:text-xs shrink-0 mt-0.5">
                       {idx + 1}
                     </span>
                     <div className="min-w-0">
@@ -61,14 +61,14 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
                           <Clock className="w-3 h-3 text-slate-400 shrink-0" /> {zone.hours}
                         </span>
                         <span>•</span>
-                        <span className="flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold">
+                        <span className="flex items-center gap-1 text-sky-700 dark:text-sky-400 font-semibold">
                           <Camera className="w-3 h-3 shrink-0" /> Security Monitored
                         </span>
                       </div>
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 font-extrabold text-[10px] sm:text-[11px] border dark:border-emerald-800">
+                    <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 font-extrabold text-[10px] sm:text-[11px] border border-sky-200 dark:border-sky-800">
                       {zone.safeScore} Safety
                     </span>
                   </div>
@@ -79,30 +79,30 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
 
           {/* Golden Rules of Campus Circular Exchange */}
           <div className="bg-slate-100/80 dark:bg-slate-800/60 rounded-2xl p-3.5 sm:p-4 space-y-2.5 border dark:border-slate-700">
-            <h4 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+            <h4 className="font-bold uppercase tracking-wider text-sky-800 dark:text-sky-400">
               The 4 Trove Safety Tenets
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-slate-700 dark:text-slate-300 text-[11px] sm:text-xs">
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-slate-900 dark:text-white">Always Meet on Campus:</strong> Never meet in secluded alleys or off-campus sites.
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-slate-900 dark:text-white">Verify Student ID:</strong> Ask to see the verified student card or @{currentCampus.domain} profile.
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-slate-900 dark:text-white">Inspect Gear on Site:</strong> Test calculator screens and verify lab equipment contents.
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-slate-900 dark:text-white">UPI / Cash / Exact Change:</strong> Pay conveniently and safely right during the handoff.
                 </div>
@@ -125,7 +125,7 @@ export function SafeMeetupGuideModal({ currentCampus, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="w-full sm:w-auto px-6 py-3 bg-slate-900 dark:bg-emerald-600 hover:bg-slate-800 dark:hover:bg-emerald-700 text-white font-bold rounded-xl text-xs sm:text-sm cursor-pointer transition-colors"
+              className="w-full sm:w-auto px-6 py-3 bg-slate-900 dark:bg-sky-600 hover:bg-slate-800 dark:hover:bg-sky-700 text-white font-bold rounded-xl text-xs sm:text-sm cursor-pointer transition-colors"
             >
               I Understand & Agree
             </button>

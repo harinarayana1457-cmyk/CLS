@@ -39,10 +39,10 @@ export function Navbar({
   return (
     <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xs transition-colors">
       {/* Top University Domain Banner */}
-      <div className="bg-slate-900 dark:bg-slate-950 text-slate-300 dark:text-slate-400 text-xs py-1.5 px-3 sm:px-6 border-b border-slate-800">
+      <div className="bg-slate-950 text-slate-300 dark:text-slate-400 text-xs py-1.5 px-3 sm:px-6 border-b border-slate-850">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 text-[11px] sm:text-xs">
           <div className="flex items-center space-x-1.5 sm:space-x-2 truncate">
-            <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shrink-0">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-semibold bg-sky-500/20 text-sky-400 border border-sky-500/30 shrink-0">
               <ShieldCheck className="w-3 h-3 mr-1 shrink-0" /> Verified Network
             </span>
             <span className="hidden sm:inline text-slate-400 truncate">
@@ -53,15 +53,15 @@ export function Navbar({
             <button 
               type="button"
               onClick={onOpenSafeZonesModal}
-              className="hover:text-emerald-400 transition-colors flex items-center gap-1 cursor-pointer"
+              className="hover:text-sky-400 transition-colors flex items-center gap-1 cursor-pointer"
             >
-              <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 shrink-0" />
+              <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400 shrink-0" />
               <span className="hidden sm:inline">Campus Safe Zones</span>
               <span className="sm:hidden font-medium">Safe Zones</span>
-              <span className="text-[10px] text-emerald-300 font-bold bg-emerald-950/80 px-1 rounded">({currentCampus.meetupZones.length})</span>
+              <span className="text-[10px] text-sky-300 font-bold bg-sky-950/80 px-1 rounded">({currentCampus.meetupZones.length})</span>
             </button>
             <span className="text-slate-700 hidden sm:inline">|</span>
-            <div className="hidden sm:flex items-center gap-1 text-emerald-400 font-medium">
+            <div className="hidden sm:flex items-center gap-1 text-rose-400 font-medium">
               <Leaf className="w-3.5 h-3.5" />
               <span>{currentCampus.co2SavedKg.toLocaleString()} kg Diverted</span>
             </div>
@@ -83,10 +83,10 @@ export function Navbar({
             </div>
             <div>
               <div className="flex items-center gap-1 sm:gap-1.5">
-                <span className="font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <span className="font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                   Trove
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-bold px-1 sm:px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40 dark:border-emerald-700/50 uppercase">
+                <span className="text-[9px] sm:text-[10px] font-bold px-1 sm:px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 border border-sky-300/40 dark:border-sky-700/50 uppercase">
                   Campus
                 </span>
               </div>
@@ -132,7 +132,7 @@ export function Navbar({
                           }}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left text-xs transition-colors cursor-pointer ${
                             isSelected 
-                              ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-200 font-bold' 
+                              ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-900 dark:text-sky-200 font-bold' 
                               : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/60'
                           }`}
                         >
@@ -143,14 +143,14 @@ export function Navbar({
                               <div className="text-[10px] text-slate-500 dark:text-slate-400 truncate">@{campus.domain} • {campus.activeStudents.toLocaleString()} peers</div>
                             </div>
                           </div>
-                          {isSelected && <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 ml-2" />}
+                          {isSelected && <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 ml-2" />}
                         </button>
                       );
                     })}
                   </div>
                   <div className="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700 px-3 py-1 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
                     <span>Don't see your school?</span>
-                    <button type="button" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline cursor-pointer">Request</button>
+                    <button type="button" className="text-sky-600 dark:text-sky-400 font-bold hover:underline cursor-pointer">Request</button>
                   </div>
                 </div>
               </>
@@ -168,7 +168,7 @@ export function Navbar({
             placeholder="Search courses (CSE2001), Casio calculators, cycles, lab gear..."
             value={isSavedActive ? '' : searchQuery === '__free__' ? 'Free' : searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-9 pr-9 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-100/80 dark:hover:bg-slate-700/80 focus:bg-white dark:focus:bg-slate-800 text-xs rounded-full border border-slate-200 dark:border-slate-700 focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
+            className="w-full pl-9 pr-9 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-100/80 dark:hover:bg-slate-700/80 focus:bg-white dark:focus:bg-slate-800 text-xs rounded-full border border-slate-200 dark:border-slate-700 focus:border-sky-500 dark:focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
           />
           {searchQuery && (
             <button
@@ -190,7 +190,7 @@ export function Navbar({
             onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
             className={`md:hidden p-2 rounded-full transition-colors cursor-pointer ${
               mobileSearchOpen || searchQuery 
-                ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400' 
+                ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400' 
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
             title="Search campus assets"
@@ -203,7 +203,7 @@ export function Navbar({
           <button
             type="button"
             onClick={onToggleDarkMode}
-            className="p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
+            className="p-2 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
             title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             aria-label="Toggle Dark Mode"
           >
@@ -214,22 +214,22 @@ export function Navbar({
             )}
           </button>
 
-          {/* Chat / Messages Button (Desktop only - mobile is in BottomNav) */}
+          {/* Chat / Messages Button (Desktop only) */}
           <button
             type="button"
             onClick={onOpenChatModal}
-            className="hidden md:flex relative p-2 text-slate-600 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
+            className="hidden md:flex relative p-2 text-slate-600 dark:text-slate-300 hover:text-sky-700 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
             title="Campus In-App Deals & Messages"
           >
             <MessageSquare className="w-5 h-5" />
             {unreadMessagesCount > 0 && (
-              <span className="absolute top-1 right-1 w-4 h-4 bg-emerald-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-xs">
+              <span className="absolute top-1 right-1 w-4 h-4 bg-sky-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-xs">
                 {unreadMessagesCount}
               </span>
             )}
           </button>
 
-          {/* Saved Items Button (Desktop only - mobile is in BottomNav) */}
+          {/* Saved Items Button (Desktop only) */}
           <button
             type="button"
             onClick={() => onSearchChange(isSavedActive ? '' : '__saved__')}
@@ -263,7 +263,7 @@ export function Navbar({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:scale-95 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 active:scale-95 shadow-md shadow-sky-600/30 transition-all cursor-pointer"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Circulate Item</span>
@@ -280,9 +280,9 @@ export function Navbar({
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
                 alt="Student Profile"
-                className="w-7 h-7 rounded-full object-cover border border-emerald-500"
+                className="w-7 h-7 rounded-full object-cover border border-sky-500"
               />
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-sky-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
             </div>
             <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
               Ananya (4.96 ★)
@@ -293,7 +293,7 @@ export function Navbar({
           <button
             type="button"
             onClick={onOpenCreateModal}
-            className="sm:hidden px-2.5 py-1.5 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:scale-95 shadow-xs flex items-center gap-1 cursor-pointer"
+            className="sm:hidden px-2.5 py-1.5 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 active:scale-95 shadow-sm shadow-sky-600/30 flex items-center gap-1 cursor-pointer"
           >
             <PlusCircle className="w-3.5 h-3.5" />
             <span>Post</span>
@@ -314,7 +314,7 @@ export function Navbar({
               placeholder="Search courses, calculators, bicycles, lab kits..."
               value={isSavedActive ? '' : searchQuery === '__free__' ? 'Free' : searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full pl-9 pr-9 py-2 bg-white dark:bg-slate-800 text-sm rounded-xl border border-slate-300 dark:border-slate-700 focus:border-emerald-500 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400"
+              className="w-full pl-9 pr-9 py-2 bg-white dark:bg-slate-800 text-sm rounded-xl border border-slate-300 dark:border-slate-700 focus:border-sky-500 dark:focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 text-slate-900 dark:text-slate-100 outline-none transition-all placeholder:text-slate-400"
             />
             {searchQuery && (
               <button
@@ -334,7 +334,7 @@ export function Navbar({
                 key={term}
                 type="button"
                 onClick={() => onSearchChange(term)}
-                className="px-2 py-0.5 rounded-full text-[10px] bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shrink-0 hover:bg-emerald-100 dark:hover:bg-emerald-950"
+                className="px-2 py-0.5 rounded-full text-[10px] bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shrink-0 hover:bg-sky-100 dark:hover:bg-sky-950"
               >
                 {term}
               </button>

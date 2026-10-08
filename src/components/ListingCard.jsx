@@ -16,7 +16,7 @@ export function ListingCard({
     switch (listing.mode) {
       case 'buy':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-sky-600 to-indigo-600 text-white shadow-xs">
             Buy / Sell
           </span>
         );
@@ -52,7 +52,7 @@ export function ListingCard({
   const getConditionColor = (cond) => {
     switch (cond) {
       case 'like-new':
-        return 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800';
+        return 'bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800';
       case 'excellent':
         return 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800';
       case 'good':
@@ -70,7 +70,7 @@ export function ListingCard({
   return (
     <div 
       onClick={() => onSelectListing(listing)}
-      className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-emerald-500/5 dark:hover:shadow-emerald-500/10 hover:-translate-y-0.5 sm:hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer relative"
+      className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 hover:border-sky-500/50 dark:hover:border-sky-500/50 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-sky-500/5 dark:hover:shadow-sky-500/10 hover:-translate-y-0.5 sm:hover:-translate-y-1 transition-all duration-300 flex flex-col cursor-pointer relative"
     >
       {/* Card Header & Image */}
       <div className="relative aspect-4/3 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
@@ -111,8 +111,8 @@ export function ListingCard({
 
         {/* Eco-Score Overlay Badge */}
         {listing.sustainability && (
-          <div className="absolute bottom-2 left-2 sm:bottom-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-950/80 text-emerald-300 text-[9px] sm:text-[10px] font-bold backdrop-blur-md border border-white/10 flex items-center gap-1 sm:gap-1.5 shadow-sm">
-            <Leaf className="w-3 h-3 text-emerald-400 shrink-0" />
+          <div className="absolute bottom-2 left-2 sm:bottom-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-950/80 text-sky-300 text-[9px] sm:text-[10px] font-bold backdrop-blur-md border border-white/10 flex items-center gap-1 sm:gap-1.5 shadow-sm">
+            <Leaf className="w-3 h-3 text-sky-400 shrink-0" />
             <span>Prevents {listing.sustainability.co2SavedKg} kg CO₂</span>
           </div>
         )}
@@ -132,7 +132,7 @@ export function ListingCard({
           </div>
 
           {/* Title */}
-          <h3 className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm line-clamp-2 leading-snug group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+          <h3 className="font-bold text-slate-900 dark:white text-xs sm:text-sm line-clamp-2 leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
             {listing.title}
           </h3>
 
@@ -151,7 +151,7 @@ export function ListingCard({
                 {listing.originalPrice && (
                   <>
                     <span className="text-[11px] sm:text-xs text-slate-400 dark:text-slate-500 line-through">₹{listing.originalPrice}</span>
-                    <span className="text-[9px] sm:text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border dark:border-emerald-800">
+                    <span className="text-[9px] sm:text-[10px] font-bold px-1.5 py-0.2 rounded bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
                       -{discountPercent}%
                     </span>
                   </>
@@ -208,7 +208,7 @@ export function ListingCard({
               e.stopPropagation();
               onSelectListing(listing);
             }}
-            className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 group-hover:bg-emerald-600 dark:group-hover:bg-emerald-600 text-slate-800 dark:text-slate-200 group-hover:text-white dark:group-hover:text-white rounded-xl text-xs font-bold transition-all duration-200 shadow-xs cursor-pointer active:scale-95 shrink-0"
+            className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 group-hover:bg-sky-600 dark:group-hover:bg-sky-600 text-slate-800 dark:text-slate-200 group-hover:text-white dark:group-hover:text-white rounded-xl text-xs font-bold transition-all duration-200 shadow-xs cursor-pointer active:scale-95 shrink-0"
           >
             {listing.mode === 'buy' ? 'Buy' : listing.mode === 'rent' ? 'Rent' : listing.mode === 'swap' ? 'Swap' : listing.mode === 'free' ? 'Claim' : 'Fulfill'}
           </button>
@@ -227,7 +227,7 @@ export function ListingCard({
           </div>
 
           <div className="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 truncate max-w-[48%]" title={listing.preferredMeetup}>
-            <MapPin className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <MapPin className="w-3 h-3 text-sky-600 dark:text-sky-400 shrink-0" />
             <span className="truncate">{listing.preferredMeetup}</span>
           </div>
         </div>
