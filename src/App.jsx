@@ -220,7 +220,25 @@ export function App() {
   }, [listings]);
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-200">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-200 relative">
+      {/* 
+        Ambient Spectral Aura Glow Orbs 
+        Infuses the entire page with the artwork's fiery crimson, solar yellow, 
+        and electric cyan radiance across both light and dark mode.
+      */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-60 dark:opacity-75">
+        {/* Top-Left Fiery Crimson Orb */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 sm:w-[600px] sm:h-[600px] bg-gradient-to-br from-red-500/35 via-rose-500/25 to-transparent rounded-full blur-3xl"></div>
+        {/* Top-Right Solar Yellow Orb */}
+        <div className="absolute top-1/4 -right-20 w-80 h-80 sm:w-[520px] sm:h-[520px] bg-gradient-to-bl from-yellow-400/35 via-amber-400/25 to-transparent rounded-full blur-3xl"></div>
+        {/* Center-Left Electric Cyan Pool */}
+        <div className="absolute top-1/2 -left-20 w-96 h-96 sm:w-[550px] sm:h-[550px] bg-gradient-to-tr from-sky-500/30 via-blue-500/20 to-transparent rounded-full blur-3xl"></div>
+        {/* Center-Right Cosmic Violet Aura */}
+        <div className="absolute top-2/3 -right-24 w-80 h-80 sm:w-[480px] sm:h-[480px] bg-gradient-to-tl from-purple-500/25 via-indigo-500/20 to-transparent rounded-full blur-3xl"></div>
+        {/* Bottom-Right Scarlet Orb */}
+        <div className="absolute bottom-10 -right-20 w-96 h-96 sm:w-[600px] sm:h-[600px] bg-gradient-to-tl from-red-600/35 via-rose-500/25 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
       {/* Top Global Navigation Bar */}
       <Navbar
         currentCampus={currentCampus}
@@ -259,7 +277,7 @@ export function App() {
       />
 
       {/* Main Circulation Catalog & Community Section */}
-      <main id="circulation-hub" className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8">
+      <main id="circulation-hub" className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <div>

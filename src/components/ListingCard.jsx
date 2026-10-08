@@ -16,31 +16,31 @@ export function ListingCard({
     switch (listing.mode) {
       case 'buy':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-sky-600 to-indigo-600 text-white shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-xs">
             Buy / Sell
           </span>
         );
       case 'rent':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-black bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 shadow-xs">
             Course Rental
           </span>
         );
       case 'swap':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-xs">
             Barter Swap
           </span>
         );
       case 'free':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-extrabold bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-black bg-gradient-to-r from-rose-500 to-orange-500 text-white shadow-xs">
             Free Share
           </span>
         );
       case 'wanted':
         return (
-          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-xs">
+          <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs">
             Wanted
           </span>
         );

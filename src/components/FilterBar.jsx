@@ -69,18 +69,29 @@ export function FilterBar({
             const isSelected = activeMode === mode.id;
             const IconComp = mode.icon ? MODE_ICON_MAP[mode.icon] : null;
 
+            const getModeActiveClass = (id) => {
+              switch (id) {
+                case 'buy': return 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md shadow-sky-500/25 font-black';
+                case 'rent': return 'bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 shadow-md shadow-amber-400/25 font-black';
+                case 'swap': return 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-md shadow-purple-500/25 font-black';
+                case 'free': return 'bg-gradient-to-r from-rose-500 to-red-600 text-white shadow-md shadow-rose-500/25 font-black';
+                case 'wanted': return 'bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-md shadow-orange-500/25 font-black';
+                default: return 'bg-slate-900 dark:bg-sky-600 text-white shadow-sm font-bold';
+              }
+            };
+
             return (
               <button
                 key={mode.id}
                 type="button"
                 onClick={() => onSelectMode(mode.id)}
-                className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
+                className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
                   isSelected
-                    ? 'bg-slate-900 dark:bg-sky-600 text-white shadow-sm'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                    ? getModeActiveClass(mode.id)
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold'
                 }`}
               >
-                {IconComp && <IconComp className={`w-3.5 h-3.5 ${isSelected ? 'text-sky-400 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`} />}
+                {IconComp && <IconComp className={`w-3.5 h-3.5 ${isSelected ? (mode.id === 'rent' ? 'text-slate-950' : 'text-white') : 'text-slate-500 dark:text-slate-400'}`} />}
                 <span>{mode.label}</span>
               </button>
             );
